@@ -1,0 +1,286 @@
+/* Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Reusable */
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand__header {
+  margin-left: 14px;
+  font-size: 21px;
+  font-weight: 600;
+  color: #C4A88D;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+}
+
+.brand__header p {
+  font-weight: 400;
+}
+
+.decorator {
+  position: relative;
+}
+
+.decorator::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  transform: translateX(50px) translateY(-50%);
+  width: 4px;
+  height: 94px;
+  background:#C4A88D;
+}
+
+.heading h1, .heading h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 50px;
+  color: #12355B;
+}
+
+.heading p {
+  margin-top: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.heading h1:nth-child(2) {
+  font-weight: 700;
+}
+
+section {
+  padding-top: 71px;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+/* Navbar */
+
+.navbar {
+  padding: 40px 5vw 0 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+}
+
+
+
+/* Navbar buttons */
+
+.navbar .navbar__options {
+  list-style-type: none;
+  
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: flex;
+}
+
+.navbar .navbar__options li {
+  margin: 0 26px;
+}
+
+.navbar .navbar__options a {
+  text-decoration: none;
+  color: #F2F2F2;
+  display:block;
+  height: 100%;
+  padding: 10px 25px;
+  letter-spacing: 0.06em;
+}
+
+.navbar .navbar__options li:hover a {
+  opacity: 0.5;
+}
+
+.navbar .navbar__option--contact {
+  border: 2px solid #C4A88D;
+}
+
+/* main */
+#main {
+  background: #12355B;
+  padding-top: 25vh;
+  padding-bottom: 15vh;
+}
+
+#main .heading {
+  position: relative;
+  transform: translateX(50px);
+  padding-left: 44px;
+}
+
+#main .heading::before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 35vh;
+  background: #C4A88D;
+}
+
+#main .heading h1 {
+  color: white;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.06em;
+}
+
+#main .heading p {
+  color: #C4A88D;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#main .heading {
+  display: inline-block;
+}
+
+#main .main__arrow {
+  position: absolute;
+  left: 45%;
+  bottom: -50%;
+  transform: translateX(-50%);
+}
+
+/* about */
+.about {
+  position: relative;
+  padding-top: 137px;
+  padding-bottom: 121px;
+}
+
+.about .heading {
+  max-width: 663px;
+}
+
+.about__photo {
+  width: 530px;
+  height: 618px;
+  background: #C4C4C4;
+
+  position: absolute;
+  top: -50px;
+  right: 0;
+}
+
+
+/* specs */
+#specs {
+  background: #FAF7F4;
+  padding-bottom: 91px;
+  display: flex;
+}
+
+.specs__list {
+  margin-left: 50px;
+  display: flex;
+}
+
+.specs__element {
+  width: 284px;
+  height: 369px;
+  display: flex;
+  flex-direction: column;
+
+  border: 2px solid #C4A88D;
+  margin: 0 9px;
+}
+
+/* clients */
+.clients {
+  background: #12355B;
+  padding-bottom: 68px;
+}
+
+.clients .heading h1, .clients .heading p {
+  color: white;
+}
+
+/* blog */
+
+.blog {
+  background: white;
+  padding-bottom: 93px;
+}
+
+.blog__content {
+  margin-top: 72px;
+
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.blog__post header {
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000000;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.blog__image {
+  width: 100%;
+  height: 272px;
+  background: #c4c4c4;
+
+  margin-top: 9px;
+  margin-bottom: 24px;
+}
+
+.blog__post p {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 30px;
+  color: #000000;
+}
+
+.blog__post span {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 27px;
+
+  color: #000000;
+
+  opacity: 0.5;
+}
+
+
+/* contact */
+
+#contact {
+  background: rgba(196, 168, 141, 0.3);
+  padding-bottom: 116px;
+}
+
+footer {
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 67px;
+  padding-bottom: 74px;
+  background: #12355B;
+}
