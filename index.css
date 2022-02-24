@@ -74,7 +74,12 @@ section {
   position: fixed;
   width: 100%;
   z-index: 1;
-  /* background: #12355B; */
+  background: transparent;
+  transition: all 200ms linear;
+}
+
+.navbar.scrolled {
+  background-color: #12355B;
 }
 
 /* Navbar buttons */
@@ -203,11 +208,35 @@ section {
   background: #FAF7F4;
   padding-bottom: 91px;
   display: flex;
+  position: relative;
 }
 
 .specs__list {
   margin-left: 50px;
+  margin-right: 50px;
   display: flex;
+  overflow-x: hidden;
+}
+
+.specs__controls {
+  position: relative;
+  max-width: 70%;
+}
+
+.specs__right, .specs__left {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+}
+
+.specs__left {
+  left: 0;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.specs__right {
+  right: 0;
+  transform: translateY(-50%) translateX(50%);
 }
 
 .spec {
@@ -224,6 +253,8 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  flex-shrink: 0;
 }
 
 .spec__header {
