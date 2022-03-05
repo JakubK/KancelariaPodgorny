@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 /* Reusable */
 .brand {
   display: flex;
@@ -67,7 +72,7 @@ section {
 /* Navbar */
 
 .navbar {
-  padding: 40px 5vw 40px 5vw;
+  padding: 40px 30px 40px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -78,8 +83,45 @@ section {
   transition: all 200ms linear;
 }
 
+.navbar__panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
 .navbar.scrolled {
   background-color: #12355B;
+}
+
+@media screen and  (max-width: 1300px){
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .navbar .brand {
+    align-self: flex-start;
+  }
+
+  .navbar .navbar__options {
+    margin-top: 16px;
+    flex-direction: column;
+    display: none !important;
+  }
+
+  .navbar__options.navbar__options--toggled {
+    display: flex !important;
+  }
 }
 
 /* Navbar buttons */
@@ -105,6 +147,7 @@ section {
   height: 100%;
   padding: 10px 25px;
   letter-spacing: 0.06em;
+  white-space: nowrap;
 }
 
 .navbar .navbar__options li:hover a {
@@ -117,7 +160,6 @@ section {
 
 /* main */
 #main {
-  /* background: #12355B; */
   background-image: url('img/bg.jpeg');
   background-position: right;
   background-repeat: no-repeat;
@@ -176,13 +218,40 @@ section {
 
 #main .main__arrow {
   position: absolute;
-  left: 45%;
-  bottom: -50%;
-  transform: translateX(-50%);
+  left: 15%;
+  bottom: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+  #main {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #main .heading {
+    position: static;
+    padding-left: 10px;
+    transform: translateX(0);
+  }
+
+  #main .heading h1 {
+    font-size: 26px;
+  }
+
+  #main .heading::before {
+    display: none;
+  }
+
+  #main .main__arrow {
+    left: 50%;
+    top: 85%;
+    transform: translateX(-50%);
+  }
 }
 
 /* about */
 .about {
+  margin-top: 16px;
   position: relative;
   padding-top: 137px;
   padding-bottom: 121px;
@@ -202,6 +271,19 @@ section {
   right: 50px;
 }
 
+@media screen and (max-width: 1300px) {
+  .about {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 0;
+  }
+
+  .about__photo {
+    position: static;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
 
 /* specs */
 #specs {
@@ -227,6 +309,12 @@ section {
   position: absolute;
   top: 50%;
   cursor: pointer;
+  opacity: 0.2;
+  transition: opacity 0.5s;
+}
+
+.specs__right:hover, .specs__left:hover {
+  opacity: 1;
 }
 
 .specs__left {
@@ -284,6 +372,17 @@ section {
   line-height: 22px;
   text-align: center;
   color: #12355B;
+}
+
+@media screen and (max-width: 768px) {
+  #specs {
+    flex-direction: column;
+  }
+
+  .specs__controls {
+    margin-top: 36px;
+    max-width: unset;
+  }
 }
 
 
@@ -365,11 +464,12 @@ section {
   transform: scaleY(1.5);
 }
 
-/* .carousel__btn.carousel__btn--active {
-  opacity: 1;
-  width: 92px;
-  height: 20px;
-} */
+@media screen and (max-width: 768px) {
+  .clients__content {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+}
 
 /* blog */
 
@@ -426,6 +526,12 @@ section {
   opacity: 0.5;
 }
 
+
+@media screen and (max-width: 768px) {
+  .blog__content {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* contact */
 
@@ -518,11 +624,29 @@ section {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1024px) {
+  .contact__form {
+    margin-top: 2em;
+  }
+
+  .contact__content {
+    grid-template-columns: 1fr;
+  }
+
+  .form__row2 {
+    grid-template-columns: 1fr;
+  }
+
+  .form button {
+    width: 100%;
+  }
+}
+
 /* footer */
 
 footer {
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-top: 67px;
   padding-bottom: 74px;
   background: #12355B;
@@ -541,4 +665,20 @@ footer {
   font-family: 'Poppins', sans-serif;
   font-size: 18px;
   line-height: 27px;
+}
+
+.footer__navigation svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 768px) {
+  .brand__header {
+    font-size: 1em;
+  }
+  
+  .footer__sitemap {
+    grid-template-columns: 1fr;
+    row-gap: 2em;
+  }
 }

@@ -1,12 +1,26 @@
 //  Navigation 
 const navbar = document.querySelector('.navbar');
 const firstSection = document.getElementsByTagName('section')[0];
+const navOptions = document.querySelector('.navbar__options');
+
 document.addEventListener('scroll', () => {
-  if(window.scrollY > firstSection.clientHeight - navbar.clientHeight)
+  if(navOptions.classList.contains('navbar__options--toggled') || window.scrollY > navbar.clientHeight)
     navbar.classList.add('scrolled');
   else
     navbar.classList.remove('scrolled');
-})
+});
+
+const burger = document.querySelector('.burger');
+burger.addEventListener('click', () => {
+  if(!navOptions.classList.contains('navbar__options--toggled')) {
+    navOptions.classList.add('navbar__options--toggled');
+    navbar.classList.add('scrolled');
+  }
+  else {
+    navOptions.classList.remove('navbar__options--toggled');
+    navbar.classList.remove('scrolled');
+  }
+});
 
 //  Specs
 
@@ -23,10 +37,6 @@ const amount = testSpec.clientWidth;
 let scrollLeft = 0;
 
 
-// leftArrow.addEventListener('click', () => {
-//   moveList(-amount);
-// })
-
 leftArrow.addEventListener('mousedown', () => {
   moveList(-amount);
 })
@@ -34,10 +44,6 @@ leftArrow.addEventListener('mousedown', () => {
 rightArrow.addEventListener('mousedown', () => {
   moveList(amount);
 })
-
-// rightArrow.addEventListener('click', () => {
-//   moveList(amount);
-// })
 
 
 const moveList = (amount) => {
