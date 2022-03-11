@@ -25,11 +25,7 @@ burger.addEventListener('click', () => {
 //  Specs
 
 const testSpec = document.querySelector('.spec');
-const specCount = 10;
 const specList = document.querySelector('.specs__list');
-for(let i = 0;i < specCount; i++) {
-  specList.appendChild(testSpec.cloneNode(true));
-}
 
 const leftArrow = document.querySelector('.specs__left');
 const rightArrow = document.querySelector('.specs__right');

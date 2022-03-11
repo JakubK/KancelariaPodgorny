@@ -1,0 +1,38 @@
+footer {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 67px;
+  padding-bottom: 74px;
+  background: #12355B;
+}
+
+.footer__sitemap {
+  margin-top: 52px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: rgba(196,168,141,0.8);
+}
+
+.footer__navigation {
+  list-style-type: none;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.footer__navigation svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 768px) {
+  .brand__header {
+    font-size: 1em;
+  }
+  
+  .footer__sitemap {
+    grid-template-columns: 1fr;
+    row-gap: 2em;
+  }
+}
